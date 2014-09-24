@@ -1,7 +1,7 @@
 linux-memavailable-procfs
 =========================
 
-A Perl port of the /proc/meminfo "MemAvailable" metric which got introduced in Linux 3.14 kernels.
+A Perl backport of the /proc/meminfo "MemAvailable" metric which got introduced in Linux 3.14 kernels.
 
 Additionally, an improved "free" util is provided which replaces the traditional, outdated one.
 
@@ -13,3 +13,6 @@ https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e43
 
 More info about the "MemAvailable" metric can be found in the kernel /proc filesystem docs:
 https://www.kernel.org/doc/Documentation/filesystems/proc.txt
+
+Blog article with a few examples:
+http://blog.famzah.net/2014/09/24/memavailable-metric-for-linux-kernels-before-3-14-in-procmeminfo/
