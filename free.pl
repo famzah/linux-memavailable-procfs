@@ -167,3 +167,20 @@ foreach my $k (@extended_row_header) {
 		"  $k", fmt($extended_data->{$k}, $mem_row_data->{'total'}, 0)
 	);
 }
+
+my @extended_row_header2 = (
+	'Active(file)', 'Inactive(file)', 'SReclaimable'
+);
+my $extended_data2 = {
+	'Active(file)' => $meminfo->{'Active(file)'},
+	'Inactive(file)' => $meminfo->{'Inactive(file)'},
+	'SReclaimable' => $meminfo->{'SReclaimable'},
+};
+
+printf("\nExtended caches info:\n");
+foreach my $k (@extended_row_header2) {
+	printf(
+		"%-18s %10s\n",
+		"  $k", fmt($extended_data2->{$k}, $mem_row_data->{'total'}, 0)
+	);
+}
