@@ -106,8 +106,8 @@ $mem_row_data->{'others'} = $mem_row_data->{'total'} -
 	$mem_row_data->{'caches'};
 
 my $minus_caches_data = {
-	'used' => $mem_row_data->{'used'} - $mem_row_data->{'caches'},
-	'free' => $mem_row_data->{'free'} + $mem_row_data->{'caches'},
+	'used' => $meminfo->{'MemTotal'} - $avail,
+	'free' => $avail,
 };
 
 my $swap_data = {
@@ -126,7 +126,7 @@ printf($first_header_fmt, '', @mem_row_header);
 printf($first_header_fmt, 'Mem:', @mem_row_values);
 printf(
 	"%-18s %10s %10s\n",
-	'  -/+ caches',
+	'  -/+ avail',
 	fmt($minus_caches_data->{'used'}, $mem_row_data->{'total'}, 0),
 	fmt($minus_caches_data->{'free'}, $mem_row_data->{'total'}, 0)
 );
