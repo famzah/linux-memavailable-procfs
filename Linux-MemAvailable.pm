@@ -191,7 +191,7 @@ sub calculate {
 	$slab_reclaimable = get_v($meminfo, 'SReclaimable');
 	print "SReclaimable: $slab_reclaimable kB\n" if ($debug);
 
-	$available += $slab_reclaimable - min($slab_reclaimable, $wmark_low);
+	$available += $slab_reclaimable - min($slab_reclaimable / 2, $wmark_low);
 
 	if ($available < 0) {
 		$available = 0;
