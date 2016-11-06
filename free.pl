@@ -85,6 +85,9 @@ sub parse_cmd_args() {
 
 parse_cmd_args();
 
+#Linux::MemAvailable::set_debug();
+#Linux::MemAvailable::set_old_calc();
+
 my ($avail, $meminfo) = Linux::MemAvailable::calculate();
 
 my @mem_row_header = (
